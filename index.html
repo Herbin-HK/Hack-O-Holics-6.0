@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./images/sjit.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c6920433d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Hack O' Holics 6.0</title>
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline class="background-video">
+    <source src="./images/270408.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<div class="content">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#themes">Tracks</a></li>
+                    <li><a href="#event">Timeline</a></li>
+                    <li><a href="./images/Bus Routes.pdf" download="">Bus Routes</a></li>
+                    <li><a href="#terms-of-service">Rules</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#Organizers">Organizers</a></li> 
+                    <li><a href="#map">Directions</a></li>
+                    <li><a href="https://forms.gle/mxQUp8MGwK5kXfXs6">Registration</a></li>
+                    <i class="fa-regular fa-x" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            
+            <div class="header-content">
+                <!-- Left Information Panel -->
+                <div class="left-panel">
+                    <div class="event-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Event Date</h3>
+                                <p>10-11 October 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Prize Pool</h3>
+                                <p>₹50,000+</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Team Size</h3>
+                                <p>Max 4 members</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Duration</h3>
+                                <p>24 Hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <a href="./images/Bus Routes.pdf" download class="quick-btn">
+                            <i class="fa-solid fa-bus"></i>
+                            <span>Bus Routes</span>
+                        </a>
+                        <a href="./images/Poster.jpg" download class="quick-btn">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download Poster</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Center Content -->
+                <div class="center-content">
+                    <div class="hero-logo-section">
+                        <div class="logo-wrapper">
+                            <img src="./images/header.png" alt="Hack O' Holics Logo" class="main-logo">
+                        </div>
+                        
+                        <div class="organization-info">
+                            <div class="dept-info">
+                                <p class="dept-text">Department of Computer Science & Engineering</p>
+                                <div class="collaboration-line"></div>
+                                <div class="csi-collaboration">
+                                    <p class="collab-text">In Association with</p>
+                                    <div class="csi-info">
+                                        <img src="./images/CSE.jpg" alt="CSI Logo" class="csi-logo">
+                                        <p class="csi-text">Computer Society of India<br>Region 7 Chapter <br> Presents</p>
+                                        <img src="./images/csi.jpg" alt="CSI Logo" class="csi-logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-title-section">
+                            <h1 class="event-title">Hack O'Holics 6.0</h1>
+                            <p class="event-subtitle">24-Hour Innovation Challenge</p>
+                        </div>
+                        
+                        <!-- Registration Notice -->
+                        <div class="registration-notice">
+                            <div class="notice-content">
+                                <i class="fa-solid fa-exclamation-triangle"></i>
+                                <p>Registration Closes Soon!</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Countdown Timer -->
+                        <div id="countdown" class="countdown"></div>
+                        
+                        <!-- Main CTA -->
+                        <div class="main-cta">
+                            <a href="https://forms.gle/mxQUp8MGwK5kXfXs6" class="register-btn" id="registerBtn">
+                                <span>Register Now</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="right-panel">
+                    <!-- Sponsor Section -->
+                    <div class="sponsor-section">
+                        <div class="sponsor-card">
+                            <p class="sponsor-label">Official Sponsor</p>
+                            <div class="sponsor-logo-wrapper">
+                                <img src="./images/zuntra.png" alt="Sponsor Logo" class="sponsor-logo">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Featured Tracks -->
+                    <div class="featured-tracks">
+                        <h3>Innovation Tracks</h3>
+                        <div class="track-list">
+                            <div class="track-item">
+                                <div class="track-dot ai"></div>
+                                <span>Artificial Intelligence</span>
+                            </div>
+                            <div class="track-item">
+                                <div class="track-dot cyber"></div>
+                                <span>Cyber Security</span>
+                            </div>
+                            <div class="track-item">
+                                <div class="track-dot iot"></div>
+                                <span>Smart Automation & IoT</span>
+                            </div>
+                            <div class="track-item">
+                                <div class="track-dot industry"></div>
+                                <span>Production Industry</span>
+                            </div>
+                            <div class="track-item">
+                                <div class="track-dot game"></div>
+                                <span>Gamification of Education</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing Info -->
+                    <div class="pricing-card">
+                        <h3>Registration Fees</h3>
+                        <div class="pricing-info">
+                            <div class="price-row">
+                                <span class="price-label">CSI Members</span>
+                                <span class="price-value">₹499 (Team)</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Non-CSI Members</span>
+                                <span class="price-value">₹599 (Team)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div id="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+                    <h3>DATE</h3>
+                    <p>10/10/2025 - 11/10/2025</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <h3>LOCATION</h3>
+                    <p>Perwinkle Centre</p>
+                    <p>St.Joseph's Institute of Technology, OMR, CHENNAI</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user-friends"></i>
+                    </div>
+                    <h3>TEAM SIZE</h3>
+                    <p>Maximum 4 members per team</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3>REGISTRATION FEE</h3>
+                    <p>
+                        <strong>CSI Members:</strong><br>
+                        Team: ₹499 | Individual: ₹399<br><br>
+                        <strong>Non-CSI Members:</strong><br>
+                        Team: ₹599 | Individual: ₹499
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+        <div id="about">
+            <div class="container">
+                <div class="about-section">
+                    <div class="about-images">
+                        <div class="about-image">
+                            <img src="https://hackoholics2022.stjosephstechnology.ac.in/assets/img/background/hacklogo.png" alt="Hackathon Logo">
+                        </div>
+                        <div class="about-image-secondary">
+                            <img src="./images/CSE.jpg" alt="Event Banner">
+                            <p>Computer Science & Engineering</p>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2 class="section-title">About the Event</h2>
+                        <div class="about-text">
+    <p>Hack O' Holics 6.0 is the flagship 24-hour hackathon of the Department of Computer Science & Engineering at St. Joseph's Institute of Technology, organized in collaboration with the Computer Society of India (CSI) Region 7 Chapter, uniting the institute's academic strength with the professional expertise of India's premier computer society to foster real-world problem solving and industry networking for students and young professionals.</p>
+                            <div class="event-highlights">
+                                <div class="highlight-item">
+                                    <span class="highlight-number">24</span>
+                                    <span class="highlight-text">Hours of Innovation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-number">₹50k</span>
+                                    <span class="highlight-text">Cash Prizes</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-number">4</span>
+                                    <span class="highlight-text">Max Team Size</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Tracks -->
+    <div class="tracks-section" id="themes">
+        <div class="container">
+            <h2 class="section-title centered">Innovation Tracks</h2>
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <div class="track-image" style="background-image: url('./images/ml.jpg')"></div>
+                    <div class="track-overlay">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Build intelligent solutions using ML, NLP, and Computer Vision</p>
+                        <a href="ai.html" class="track-link">Explore Track →</a>
+                    </div>
+                </div>
+
+                <div class="track-card">
+                    <div class="track-image" style="background-image: url('./images/crime-cyber-crime-hacker-hacking-digital-crime-shut.jpg')"></div>
+                    <div class="track-overlay">
+                        <h3>Cyber Security</h3>
+                        <p>Develop secure systems and protect digital infrastructure</p>
+                        <a href="cyber.html" class="track-link">Explore Track →</a>
+                    </div>
+                </div>
+
+                <div class="track-card">
+                    <div class="track-image" style="background-image: url('./images/automation.jpg')"></div>
+                    <div class="track-overlay">
+                        <h3>Smart Automation & IoT</h3>
+                        <p>Create connected devices and automated solutions</p>
+                        <a href="smart.html" class="track-link">Explore Track →</a>
+                    </div>
+                </div>
+
+                <div class="track-card featured">
+                    <div class="track-image" style="background-image: url('./images/960x0.webp')"></div>
+                    <div class="track-overlay">
+                        <h3>Innovation in Production Industry</h3>
+                        <p>Transform manufacturing with cutting-edge technology</p>
+                        <a href="industry.html" class="track-link">Explore Track →</a>
+                    </div>
+                </div>
+
+                <div class="track-card featured">
+                    <div class="track-image" style="background-image: url('./images/game.png')"></div>
+                    <div class="track-overlay">
+                        <h3>Gamification of Education</h3>
+                        <p>Make learning engaging through game-based solutions</p>
+                        <a href="gamification.html" class="track-link">Explore Track →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Timeline -->
+    <section class="timeline-section" id="event">
+        <div class="container">
+            <h2 class="section-title centered">Event Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>04/09/2025</h3>
+                        <p>Registration Opens</p>
+                        <span class="timeline-badge">Start</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>07/10/2025</h3>
+                        <p>Registration Closes</p>
+                        <span class="timeline-badge">Deadline</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>10/10/2025</h3>
+                        <p>Hackathon Begins</p>
+                        <span class="timeline-badge">Day 1</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>11/10/2025</h3>
+                        <p>Judging & Presentation</p>
+                        <span class="timeline-badge">Day 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules -->
+    <section class="rules-section" id="terms-of-service">
+        <div class="container">
+            <div class="rules-cards">
+                <div class="rule-card">
+                    <h2>Instructions</h2>
+                    <div class="rule-content">
+                        <ul>
+                            <li>Payment screenshot image name should be team name - Hack O' Holics 6.0</li>
+                            <li>Abstract should be in PPT format with filename: team-name - Hack O' Holics 6.0</li>
+                            <li>CSI Membership ID is mandatory for CSI members</li>
+                            <li>If the team has one CSI member, register as CSI team</li>
+                            <li>Join the WhatsApp group link provided in registration form</li>
+                            <li>Hostellers should give college location as current location</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h2>Rules and Regulations</h2>
+                    <div class="rule-content">
+                        <ul>
+                            <li>All team members should belong to the same college</li>
+                            <li>Team size should be limited to 4 members</li>
+                            <li>Transport and food will be provided</li>
+                            <li>Bring all necessary items for your project</li>
+                            <li>Students from any department can participate</li>
+                            <li>College ID is mandatory</li>
+                            <li>T-Shirts are not allowed</li>
+                            <li>Accommodation will be provided</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title centered">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1">
+                    <label for="faq1" class="faq-question">
+                        <span>How can I apply?</span>
+                        <span class="faq-icon">+</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Registration is simple! Just click the register button and fill up the form with your team details. Registration ends on 07/10/2025.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label for="faq2" class="faq-question">
+                        <span>Who can participate?</span>
+                        <span class="faq-icon">+</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>The hackathon is open for students from all over India. It's perfect for anyone interested in learning and innovating with their ideas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3">
+                    <label for="faq3" class="faq-question">
+                        <span>Is there any registration fee?</span>
+                        <span class="faq-icon">+</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Yes, registration fees are ₹499 per team and ₹399 for individual participation for CSI members. Non-CSI members: ₹599 per team and ₹499 for individual.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4">
+                    <label for="faq4" class="faq-question">
+                        <span>How many members can form a team?</span>
+                        <span class="faq-icon">+</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>A team should be limited to 4 members maximum. All team members should be from the same college.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5">
+                    <label for="faq5" class="faq-question">
+                        <span>What is the judging criteria?</span>
+                        <span class="faq-icon">+</span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Projects will be evaluated based on innovation, technical implementation, design, and practical impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers -->
+    <!-- <section class="organizers-section" id="Organizers">
+        <div class="container">
+            <h2 class="section-title centered">Meet the Organizers</h2>
+            <div class="organizers-slider">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/rohith.jpeg')"></div>
+                                <div class="organizer-info">
+                                    <h3>Katta Rohith</h3>
+                                    <p>📞 9949561443</p>
+                                    <p>✉️ kattarohith99@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/adams.jpg')"></div>
+                                <div class="organizer-info">
+                                    <h3>Adams Issac Raj</h3>
+                                    <p>📞 8838664818</p>
+                                    <p>✉️ adamsissacraj04@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/eugine.jpeg')"></div>
+                                <div class="organizer-info">
+                                    <h3>Eugine Carmel</h3>
+                                    <p>📞 9688101004</p>
+                                    <p>✉️ euginecarmel@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/legin.jpeg')"></div>
+                                <div class="organizer-info">
+                                    <h3>Legin</h3>
+                                    <p>📞 9789655939</p>
+                                    <p>✉️ leginml2004@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/calvin1.jpeg')"></div>
+                                <div class="organizer-info">
+                                    <h3>Calvin Davis</h3>
+                                    <p>📞 9150205661</p>
+                                    <p>✉️ calvindavissr@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/khalu.png')"></div>
+                                <div class="organizer-info">
+                                    <h3>Khalushankar</h3>
+                                    <p>📞 9840317263</p>
+                                    <p>✉️ khalushankar@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="organizer-slide">
+                            <div class="organizer-card">
+                                <div class="organizer-image" style="background-image: url('./images/ben.png')"></div>
+                                <div class="organizer-info">
+                                    <h3>Ben Stanes</h3>
+                                    <p>📞 8903059113</p>
+                                    <p>✉️ benstanes03@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="slider-dots"></div>
+            </div>
+        </div>
+    </section> -->
+    
+    <!-- Map -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <h2 class="section-title centered">Find Us</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.5877918962533!2d80.21624091429302!3d12.869879390922657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bbb618d3ea9%3A0x90b3767be093efaa!2sSt.Joseph's+Institute+of+Technology!5e0!3m2!1sen!2sin!4v1534833049690" 
+                    width="100%" 
+                    height="450" 
+                    frameborder="0" 
+                    allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Hack-o-holics 6.0. All rights reserved.</p>
+                <p>Developed by Department of Computer Science and Engineering</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

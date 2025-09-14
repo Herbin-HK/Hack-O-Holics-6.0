@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.background_video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* Removed the dark filter and increased brightness */
+    filter: brightness(70%) contrast(1.1);
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+    color: #ffffff;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    min-height: 100vh;
+}
+
+/* Industrial Header */
+.industrial-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    /* Added subtle background for better text visibility */
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+}
+
+.title-assembly {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.gear-icon {
+    font-size: 3rem;
+    color: #ff8c00;
+    animation: rotate 8s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.5));
+}
+
+.gear-icon.reverse {
+    animation: rotate-reverse 6s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ff8c00;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(255, 140, 0, 0.8),
+        0 0 20px rgba(255, 140, 0, 0.6),
+        0 0 30px rgba(255, 140, 0, 0.4);
+    letter-spacing: 3px;
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    from { 
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            0 0 10px rgba(255, 140, 0, 0.8),
+            0 0 20px rgba(255, 140, 0, 0.6),
+            0 0 30px rgba(255, 140, 0, 0.4);
+    }
+    to { 
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.9),
+            0 0 20px rgba(255, 140, 0, 1),
+            0 0 30px rgba(255, 140, 0, 0.8),
+            0 0 40px rgba(255, 140, 0, 0.6);
+    }
+}
+
+.assembly-line {
+    width: 300px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff8c00, #ffff00, #ff8c00, transparent);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.assembly-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: conveyor 2s linear infinite;
+}
+
+@keyframes conveyor {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.industry-motto {
+    font-size: 1.3rem;
+    color: #ffff00;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(255, 255, 0, 0.5);
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+
+/* Blueprint Container */
+.overview-section {
+    margin-bottom: 80px;
+}
+
+.blueprint-container {
+    background: linear-gradient(135deg, rgba(0, 100, 200, 0.25), rgba(0, 50, 100, 0.2));
+    border: 2px solid #0066cc;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.blueprint-header {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 68, 136, 0.9));
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #0066cc;
+    backdrop-filter: blur(8px);
+}
+
+.blueprint-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.blueprint-id {
+    color: #ffff00;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.blueprint-name {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.revision-stamp {
+    background: #ff8c00;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.blueprint-content {
+    padding: 30px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 102, 204, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 204, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.content-text p {
+    color: #e6f2ff;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Innovations Section */
+.innovations-section {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ff8c00;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(255, 140, 0, 0.6);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-icon {
+    font-size: 2rem;
+    margin: 0 15px;
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.5));
+}
+
+.production-line {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.innovation-module {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(0, 0, 0, 0.85));
+    border: 2px solid #444444;
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.innovation-module::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+    transition: left 0.6s ease;
+}
+
+.innovation-module:hover::before {
+    left: 100%;
+}
+
+.innovation-module:hover {
+    transform: translateY(-8px);
+    border-color: #ff8c00;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 140, 0, 0.3);
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.module-id {
+    color: #ffff00;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.priority-badge {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.priority-badge.critical {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.priority-badge.high {
+    background: linear-gradient(135deg, #ff8c00, #cc7000);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+.priority-badge.medium {
+    background: linear-gradient(135deg, #ffff00, #cccc00);
+    color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.module-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.3));
+}
+
+.innovation-module h3 {
+    color: #ffff00;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.8),
+        0 0 8px rgba(255, 255, 0, 0.3);
+    font-weight: 600;
+    text-align: center;
+}
+
+.innovation-module p {
+    color: #dddddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.module-stats {
+    border-top: 1px solid #ff8c00;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+}
+
+.stat {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.8),
+        0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff8c00, #ffff00);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffff00, #ff8c00);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 15px;
+        padding-top: 30px;
+    }
+    
+    .title-assembly {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    
+    .gear-icon {
+        font-size: 2rem;
+    }
+    
+    .section-header {
+        font-size: 2rem;
+    }
+    
+    .section-icon {
+        font-size: 1.5rem;
+        margin: 0 10px;
+    }
+    
+    .production-line {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .innovation-module {
+        padding: 20px;
+    }
+    
+    .blueprint-content {
+        padding: 20px;
+    }
+    
+    .content-text p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .innovation-module p {
+        text-align: left;
+    }
+    
+    .industrial-header {
+        padding: 20px 10px;
+        margin-bottom: 40px;
+    }
+    
+    .module-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .blueprint-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .industry-motto {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .section-header {
+        font-size: 1.6rem;
+    }
+    
+    .innovation-module h3 {
+        font-size: 1.2rem;
+    }
+    
+    .module-icon {
+        font-size: 2.5rem;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+    
+    .assembly-line {
+        width: 200px;
+    }
+    
+    .blueprint-header {
+        padding: 12px 15px;
+    }
+}
